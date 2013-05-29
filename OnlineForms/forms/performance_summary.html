@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Performance</title>
+	<link rel="STYLESHEET" type="text/css" href="../includes/bbbsa_forms.css">
+
+<!--#include file="../includes/top_nav_forms_monthly.inc"--><!-- include file has </head> and <body> tags --><br>     
+
+<form name="frmPerformance" action="Performance_edit.asp?y=<%= Request("y") %>&m=<%= Request("m") %>" method="post">
+<!--#include file="../includes/form_stamp.asp"-->
+<input type="hidden" name="status" value="editOld">
+<center> 
+
+
+<% 
+
+' Check for SBM Agency
+
+Set SBMCon = Server.CreateObject("ADODB.Connection")
+SBMCon.Open "BBBSAforms","sa","12sist12"
+query = "SELECT SBM FROM tbl_AgencyInfo WHERE AgencyID = '" & Session("AgencyIDN") & "' and SBM = 1  " 
+Set SBMQuery = SBMCon.Execute(query)
+if (SBMquery.eof) then
+	SBMAgency = 0
+else
+	SBMAgency = 1
+End if
+	
+SBMQuery.Close
+Set SBMQuery = Nothing
+SBMCon.Close
+Set SBMCon = Nothing
+
+%>
+
+
+<% 	
+Set Con = Server.CreateObject("ADODB.Connection")
+Con.Open "BBBSAforms", "sa","12sist12"
+query = "SELECT * FROM tbl_frmPerformance WHERE AgencyID='" & Session("AgencyIDN") & "' AND Year=" & Int(Request("y")) & " AND Month=12)
+Set GetPerformance = Con.Execute(query)
+ %>	
+	<div align="center">
+	<center>
+		<table width="400" border="1" cellspacing="0" cellpadding="3" bordercolordark="#003063">
+			<tr>
+				<td colspan="7" class="formHeader">PERFORMANCE</td>
+			</tr>
+			<tr>
+				<td colspan="7" class="formMainBold">Created: <%= GetPerformance("CreateDate") %><br>
+		<% form = "Performance" %> 
+		<% gid = GetPerformance("PerformanceID") %>
+		<%= GetPerformance("PerformanceID") %>
+		<!--#include file="../includes/lastmodified_stamp.asp"-->
+				</td>
+			</tr>
+			<tr>
+				<td align="center" valign="middle" class="formMain">&nbsp;</td>
+				<td align="center" valign="middle" class="formMain">Community Based</td>
+				<td align="center" valign="middle" class="formMain">School Based</td>
+				<td align="center" valign="middle" class="formMain">Other Site Based</td>
+				<td align="center" valign="middle" class="formMain">Group Mentoring</td>
+				<td align="center" valign="middle" class="formMain">Special Programs: Mentoring</td>
+				<td align="center" valign="middle" class="formMain">Special Programs: Non-Mentoring</td>
+			</tr>
+			<tr>
+				<td align="center" valign="middle" class="formMain">
+				OPEN&nbsp;matches<br>on&nbsp;the&nbsp;last&nbsp;day&nbsp;of<br><b><%= MonthName(Request("m"), False) & " " & Request("y") %></b></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("OpenMatchesCommunityBased") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("OpenMatchesSchoolBased") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("OpenMatchesOtherSiteBased") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("OpenMatchesGroupMentoring") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("OpenMatchesSpecialProgramsMentoring") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("OpenMatchesSpecialProgramsNonMentoring") %></td>
+			</tr>
+			<tr>
+				<td align="center" valign="middle" class="formMain">
+				Matches&nbsp;CLOSED&nbsp;during<br><b><%= MonthName(Request("m"), False) & " " & Request("y") %></b></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("ClosedMatchesCommunityBased") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("ClosedMatchesSchoolBased") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("ClosedMatchesOtherSiteBased") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("ClosedMatchesGroupMentoring") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("ClosedMatchesSpecialProgramsMentoring") %></td>
+				<td align="right" valign="middle" class="formMain"><%= GetPerformance("ClosedMatchesSpecialProgramsNonMentoring") %></td>
+			</tr>
+
+<!-- Fields added for SBM Questions for June and December only -->
+			
+<% if (m=6 or m=12) and SBMAgency = 1 and y <> 2001 then %>	
+			<tr>
+				<td colspan="7" class="formHeaderMedium">SCHOOL-BASED MENTORING GRANT PROGRESS REPORT</td>
+			</tr>
+			
+			<tr>
+				<td colspan="6" class="formMain">Number of Volunteers Currently in the Enrollment Process</td>
+				<td colspan="1" align="right" valign="middle" class="formMain"><%= GetPerformance("SBMVolunteersInEnrollmentProcess") %></td>
+			</tr>					
+					
+			<tr>
+				<td colspan="6" class="formMain">Amount Raised Towards Match Pledge as of the last day of &nbsp<b><%= MonthName(Request("m"), False) & " " & Request("y") %></b></td>
+				<td colspan="1" align="right" valign="middle" class="formMain"><%= GetPerformance("SBMAmountRaisedTowardsMatchPledge") %></td>				
+			</tr>				
+<% end if %>
+				<tr>
+					<td colspan="7" class="formHeader"><input type="submit" value="Edit Form" class="formMainBold"></td>
+				</tr>
+		</table>
+		<!--#include file="../includes/contact_info.inc"-->
+		</center>
+		</div>
+<% 
+GetPerformance.Close
+Set GetPerformance = Nothing
+Con.Close
+Set Con = Nothing
+ %>
+</form>
+
+</body>
+</html>

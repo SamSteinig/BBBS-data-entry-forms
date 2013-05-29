@@ -1,0 +1,68 @@
+function checkForIntegerCommas(valueToCheck)
+{
+	var myRegularExpression = /^[0-9]+(,[0-9]{3})*$/;  // Checks for integer with or without commas
+	if(!(myRegularExpression.test(valueToCheck)))
+	{
+		alert("Please make sure you have entered a whole number with no spaces.\n Do not leave this field blank."); 
+	} 
+}
+
+function validateForm()
+{	
+	
+	var onlyInteger = /^[0-9]+(,[0-9]{3})*$/;
+
+		
+	if(document.frmSDMPerformance.frmSDMPerformanceCBNumberClosedPrematurely.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceCBNumberClosedPrematurely.focus();}		
+	else if(document.frmSDMPerformance.frmSDMPerformanceSBNumberClosedPrematurely.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceSBNumberClosedPrematurely.focus();}				
+		
+	else if(document.frmSDMPerformance.frmSDMPerformanceCBChildParentStatusChange.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceCBChildParentStatusChange.focus();}				
+		
+	else if(document.frmSDMPerformance.frmSDMPerformanceCBChildParentStatusChange.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceCBChildParentStatusChange.focus();}				
+	else if(document.frmSDMPerformance.frmSDMPerformanceSBChildParentStatusChange.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceSBChildParentStatusChange.focus();}						
+	else if(document.frmSDMPerformance.frmSDMPerformanceCBChildParentDissatisfaction.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceCBChildParentDissatisfaction.focus();}						
+	else if(document.frmSDMPerformance.frmSDMPerformanceSBChildParentDissatisfaction.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceSBChildParentDissatisfaction.focus();}			
+	else if(document.frmSDMPerformance.frmSDMPerformanceCBVolunteerDissatisfaction.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceCBVolunteerDissatisfaction.focus();}					
+	else if(document.frmSDMPerformance.frmSDMPerformanceSBVolunteerDissatisfaction.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceSBVolunteerDissatisfaction.focus();}							
+	else if(document.frmSDMPerformance.frmSDMPerformanceCBTotalOpened6MonthsAgo.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceCBTotalOpened6MonthsAgo.focus();}		
+	else if(document.frmSDMPerformance.frmSDMPerformanceCBNumberStillOpen.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceCBNumberStillOpen.focus();}										
+	else if(document.frmSDMPerformance.frmSDMPerformanceEnrollmentSatAvgScore.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceEnrollmentSatAvgScore.focus();}												
+	else if(document.frmSDMPerformance.frmSDMPerformanceEnrollmentSatCount.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceEnrollmentSatCount.focus();}														
+	else if(document.frmSDMPerformance.frmSDMPerformanceMatchSatAvgScore.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceMatchSatAvgScore.focus();}			
+	else if(document.frmSDMPerformance.frmSDMPerformanceMatchSatCount.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceMatchSatCount.focus();}			
+	else if(document.frmSDMPerformance.frmSDMPerformanceCBPOEAggregateScore.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceCBPOEAggregateScore.focus();}	
+	else if(document.frmSDMPerformance.frmSDMPerformanceSBPOEAggregateScore.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceSBPOEAggregateScore.focus();}							
+	else if(document.frmSDMPerformance.frmSDMPerformanceCBPOECount.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceCBPOECount.focus();}	
+	else if(document.frmSDMPerformance.frmSDMPerformanceSBPOECount.value == "")
+		{alert("Please complete all form fields");document.frmSDMPerformance.frmSDMPerformanceSBPOECount.focus();}											
+		
+	else
+		document.frmSDMPerformance.submit();	
+}		
+
+function getNextElement (field) 
+{
+	var form = field.form;
+  	for (var e = 0; e < form.elements.length; e++)
+    	if (field == form.elements[e])
+      	break;
+  	return form.elements[++e % form.elements.length];
+}

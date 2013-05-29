@@ -1,0 +1,27 @@
+<script language="JavaScript">
+<!--
+function addEmUp() {
+ var box1 = parseFloat(document.myForm.box1.value)
+ var box2 = parseFloat(document.myForm.box2.value)
+ var box3 = parseFloat(document.myForm.box3.value)
+ var box4 = parseFloat(document.myForm.box4.value)
+ var box5 = parseFloat(document.myForm.box5.value)
+ var box6 = parseFloat(document.myForm.box6.value)
+ var box7 = parseFloat(document.myForm.box7.value)
+ document.myForm.boxtotal.value = box1 + box2 + box3 + box4 + box5 + box6 + box7
+}
+// -->
+</script>
+
+<form name="myForm" method="post">
+<input type="text" name="box1" size=10 onFocus="addEmUp();" value="0"><br>
+<input type="text" name="box2" size=10 onFocus="addEmUp();" value="0"><br>
+<input type="text" name="box3" size=10 onFocus="addEmUp();" value="0"><br>
+<input type="text" name="box4" size=10 onFocus="addEmUp();" value="0"><br>
+<input type="text" name="box5" size=10 onFocus="addEmUp();" value="0"><br>
+<input type="text" name="box6" size=10 onFocus="addEmUp();" value="0"><br>
+<input type="text" name="box7" size=10 onFocus="addEmUp();" value="0"><br>
+<P>
+<input type="text" name="boxtotal" size=10 onFocus="addEmUp();" value="0">
+</form>
+

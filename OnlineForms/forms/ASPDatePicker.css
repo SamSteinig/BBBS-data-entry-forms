@@ -1,0 +1,70 @@
+BODY {
+	background-color: transparent;
+}
+
+TD.titleBar {
+	background-image: url(background.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+TD.titleText {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: center;
+	background-color: transparent;
+	color: white;
+}
+
+TD.offMonth {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	background-color: #bfbfbf;
+	color: black;
+	vertical-align: middle;
+	text-align: center;
+	width: 25px;
+	cursor: hand;
+	border: 1px solid white;
+}
+
+TD.onMonth {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+	background-color: #efefef;
+	color: black;
+	vertical-align: middle;
+	width: 25px;
+	text-align: center;
+	border: 1px solid white;
+	cursor: hand;
+}
+
+TD.selectedDate {
+	border: 1px solid maroon;
+}
+
+TD.clickedDate {
+	background-color: #008B8B;
+	color: White;
+	cursor: pointer;
+}
+
+TD.onMonthOver {
+	color: white;
+	background-color: rgb(69,75,179);
+	border: 1px solid darkgray;
+}
+
+TD.arrows {
+	width: 20px;
+	vertical-align: bottom;
+}
+
+TH {
+	font-weight: normal;
+	font-size: 7pt;
+	font-family: Verdana, Arial;
+}

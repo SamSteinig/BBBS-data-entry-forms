@@ -1,0 +1,83 @@
+.formHeader {
+	background: #660099;
+	color: #FFFFFF;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
+
+.formHeaderMedium {
+	background: #660099;
+	color: #FFFFFF;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+}
+
+.formSubhead {
+	color: #003063;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.formHeaderSmall {
+	background: #660099;
+	color: #FFFFFF;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: center;
+}
+
+.formMain {
+	color: #003063;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-size: 12px;
+}
+
+.formMainBold {
+	color: #003063;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.formMainBold14 {
+	color: #003063;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.formMainRightJ {
+	color: #003063;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-size: 12px;
+	text-align: right;
+}
+
+.formMainCentered {
+	color: #003063;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-size: 12px;
+	text-align: center;
+}
+
+.formIndex {
+	color: #003063;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+}
+
+.MainCentered {
+	color: #003063;
+	font-family:Arial, Helvetica, sans-serif, Verdana, Geneva;
+	font-size: 16px;
+}
+
+a:link, a:visited, a:hover, a:active {font-weight: bold}
